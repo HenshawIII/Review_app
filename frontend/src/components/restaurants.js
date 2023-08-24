@@ -9,13 +9,13 @@ export default function Restaurant({user,setUser,logOut}){
     const [res,setRes] =useState(null);
     const [rev,setRev] = useState("")
     useEffect(()=>{
-        fetch(`http://localhost:5500/api/v1/restaurants/id/${id}`)
+        fetch(`https://review-app-backend-me.onrender.com/api/v1/restaurants/id/${id}`)
         .then(dat=>dat.json())
         .then(dat=>setRes(dat))
     },[])
     const handleSubmitRev = (e)=>{
             e.preventDefault()
-            fetch(`http://localhost:5500/api/v1/restaurants/review`,{
+            fetch(`https://review-app-backend-me.onrender.com/api/v1/restaurants/review`,{
                 method:"POST",
                 body:JSON.stringify({restaurant_id:id,text:rev,name:userV.user,user_id:id}),
                 headers:{"Content-Type":"application/json"}

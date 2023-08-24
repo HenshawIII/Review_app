@@ -14,7 +14,7 @@ export default function RestaurantsList(){
     const [zipcode,setZipcode] = useState("")
 
     useEffect(()=>{
-        fetch(`http://localhost:5500/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
+        fetch(`https://review-app-backend-me.onrender.com/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
         .then(data=>data.json())
         .then(data=>setRestaurants(data.restaurantsList))
         
@@ -22,7 +22,7 @@ export default function RestaurantsList(){
 
     const handleNext = ()=>{
         setPage(pg=>pg+1)
-        fetch(`http://localhost:5500/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
+        fetch(`https://review-app-backend-me.onrender.com/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
         .then(data=>data.json())
         .then(data=>setRestaurants(data.restaurantsList))
     }
@@ -31,14 +31,14 @@ export default function RestaurantsList(){
             return
         }
         setPage(pg=>pg-1);
-        fetch(`http://localhost:5500/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
+        fetch(`https://review-app-backend-me.onrender.com/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
         .then(data=>data.json())
         .then(data=>setRestaurants(data.restaurantsList))
     }
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        fetch(`http://localhost:5500/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
+        fetch(`https://review-app-backend-me.onrender.com/api/v1/restaurants/?page=${page}&name=${name}&cuisine=${cuisine}&zipcode=${zipcode}`)
         .then(data=>data.json())
         .then(data=>setRestaurants(data.restaurantsList))
     }
