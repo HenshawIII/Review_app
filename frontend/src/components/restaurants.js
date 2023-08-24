@@ -2,6 +2,7 @@ import { useEffect ,useState,useContext} from "react";
 import App from "../App";
 import { Link, json, useParams } from "react-router-dom";
 import { UserContext } from "../User";
+import Loader from "./Loader";
 
 export default function Restaurant({user,setUser,logOut}){
     const userV = useContext(UserContext)
@@ -28,7 +29,7 @@ export default function Restaurant({user,setUser,logOut}){
     }
     return (
         <div>
-            <App user={userV.user} logOut={userV.logOut}/>
+            {/* <App user={userV.user} logOut={userV.logOut}/> */}
             {res?(<div className="col-span-1 shadow-md p-2 bg-white">
                  <div className="font-xl font-bold text-gray-900 py-2">{res.name}</div>
                  <div>
@@ -70,7 +71,7 @@ export default function Restaurant({user,setUser,logOut}){
                         
                         </div>:<Link to="/login">Kindly Login to add yours</Link>}
                 </div> 
-                </div>):<h1>Loading...</h1>}
+                </div>):<Loader/>}
         </div>
     )
 }

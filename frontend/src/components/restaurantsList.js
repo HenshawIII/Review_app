@@ -1,8 +1,9 @@
 import React,{useState,useEffect,useContext} from "react"
-import App from "../App"
+// import App from "../App"
 import Cuisine from "./Cuisines";
 import { Link } from "react-router-dom";
 import { UserContext } from "../User";
+import Loader from "./Loader";
 
 export default function RestaurantsList(){
     // const [name,setName] = useState("");
@@ -45,7 +46,7 @@ export default function RestaurantsList(){
 
     return (
         <div  >
-            <App user={user} logOut={logOut}/>
+            {/* <App user={user} logOut={logOut}/> */}
             <form className="flex flex-col md:flex-row items-center w-fit" onSubmit={e=>handleSubmit(e)}>
                 <input className="border-2 border-gray-400 focus:border-red-500 m-3 p-2" name="name" value={name} placeholder="EnterName" onChange={(e)=>setName(e.target.value)}/>
                 <input className="border-2 border-gray-400 focus:border-red-500 m-3 p-2" name="cuisine" value={cuisine} placeholder="EnterCuisine" onChange={(e)=>setCuisine(e.target.value)}/>
@@ -72,7 +73,7 @@ export default function RestaurantsList(){
                 </div>)
      })}
      
-        </div>):<h1>Loading...</h1> }
+        </div>):<Loader/> }
         <div className="py-14 flex bottom-0 w-full items-center justify-center bg-slate-400 text-2xl text-white">
                         <span onClick={handlePrev}  className="hover:scale-125 transition-all duration-300 ease-in-out cursor-pointer">Prev </span>
                         <span onClick={handleNext} className="ml-20 cursor-pointer hover:scale-125 transition-all duration-300 ease-in-out">Next</span>

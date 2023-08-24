@@ -15,10 +15,10 @@ export default function Login(){
 
     return (
         <div>
-            <App logOut={logOut}user={user}/>
+            {/* <App logOut={logOut}user={user}/> */}
            <form className="flex flex-col items-start" onSubmit={e=>handleSubmit(e)}>
             <input className="m-2 border-2 border-gray-400 p-2" type="text" placeholder="enter name" required value={self} onChange={e=>setSelf(e.target.value)} />
-            <input className="m-2 border-2 border-gray-400 p-2" type="text" placeholder="enter password"/>
+            <input className="m-2 border-2 border-gray-400 p-2" type="text" placeholder="enter password" value={pass} onChange={e=>setPass(e.target.value)}/>
             <button className="bg-gray-200 p-2 ml-16" onClick={e=>handleSubmit(e)}>Submit</button>
            </form>
         </div>

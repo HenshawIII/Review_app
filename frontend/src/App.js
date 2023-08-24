@@ -13,7 +13,7 @@ function App() {
     <>
     <div>
     <div className="bg-slate-300 p-2 flex justify-between items-center text-gray-100">
-      <h1 className="text-3xl p-2 font-bold">Restaurants.com</h1>
+      <Link to="/" className="text-3xl p-2 font-bold">Restaurants.com</Link>
       <nav>
         <ul className="md:flex justify-normal hidden ">
           <li className="ml-3 cursor-pointer p-2 hover:bg-white hover:text-gray-700"><Link to="/restaurants">Home</Link></li>

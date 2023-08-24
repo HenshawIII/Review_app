@@ -15,9 +15,10 @@ function Index(){
     <>
     <BrowserRouter>
     <UserProvider>
+      <App/>
 <Routes>
 
-  <Route  path='/' element={<App/>} />
+  <Route  path='/' element={<RestaurantsList/>} />
 
   <Route path="/restaurants" element={<RestaurantsList />}/>
   <Route path ="/login" element={<Login />}/>
